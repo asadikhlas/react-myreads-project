@@ -8,8 +8,6 @@ export default class Home extends Component {
     try {
       const books = await getAll();
       this.props.addBooks(books)
-     
-    //   console.log(currentlyReading,read,wantToRead)
     } catch (error) {
       console.log(error);
     }
