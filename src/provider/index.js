@@ -9,16 +9,26 @@ export default class Index extends Component {
       currentlyReading: [],
       wantToRead: [],
       read: [],
-      addBooks: books =>{
+      addBooks: books => {
         const currentlyReading = books.filter(
-            book => book.shelf === "currentlyReading"
-          );
-          const read = books.filter(book => book.shelf === "read");
-          const wantToRead = books.filter(book => book.shelf === "wantToRead");
-          this.setState({books: currentlyReading, read, wantToRead})
+          book => book.shelf === "currentlyReading"
+        );
+        const read = books.filter(book => book.shelf === "read");
+        const wantToRead = books.filter(book => book.shelf === "wantToRead");
+        this.setState({ books: currentlyReading, read, wantToRead });
       },
-      noveBook: (book, shelf) => {
-
+      noveBook: (book, newShelf, allShelfs) => {
+        console.log(newShelf);
+        const newBooks = this.state.books.map(allBooks => {
+          const foundID =   [newShelf].find(
+            bookID => bookID === allBooks.id
+          );
+          if (foundID) {
+            allBooks.shelf = newShelf;
+          }
+          return allBooks;
+        });
+        this.state.addBooks(newBooks);
       }
     };
   }
