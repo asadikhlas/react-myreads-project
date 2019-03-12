@@ -4,7 +4,7 @@ export default class Shelf extends Component {
   render() {
     return (
       <div>
-        
+        book
       </div>
     )
   }
