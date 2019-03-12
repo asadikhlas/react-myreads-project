@@ -16,6 +16,9 @@ export default class Index extends Component {
           const read = books.filter(book => book.shelf === "read");
           const wantToRead = books.filter(book => book.shelf === "wantToRead");
           this.setState({books: currentlyReading, read, wantToRead})
+      },
+      noveBook: (book, shelf) => {
+
       }
     };
   }
