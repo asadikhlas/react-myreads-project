@@ -37,7 +37,7 @@ class SearchPage extends Component {
           }else{
               res.forEach(b => {
                   let f = this.state.books.filter(B => B.id === b.id)
-                  console.log(f)
+                  b.shelf = f[0] ? f.shelf : null
                   
               });
               return this.setState({results:res})
