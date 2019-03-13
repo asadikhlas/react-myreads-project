@@ -20,8 +20,8 @@ class Book extends Component {
                     </select>
                   </div>
                 </div>
-                <div className="book-title">The Hobbit</div>
-                <div className="book-authors">J.R.R. Tolkien</div>
+                <div className="book-title">{this.props.book.title || "No title found..."}</div>
+                <div className="book-authors">{this.props.book.authors[0] || "No Authors found..."}</div>
               </div>
             </li>
     )
