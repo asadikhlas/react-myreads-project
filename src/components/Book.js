@@ -19,7 +19,7 @@ class Book extends Component {
                   </div>
                 </div>
                 <div className="book-title">{this.props.book.title || "No title found..."}</div>
-                <div className="book-authors">{this.props.book.authors[0] || "No Authors found..."}</div>
+                <div className="book-authors">{this.props.book.authors && this.props.book.authors[0] || "No Authors found..."}</div>
               </div>
             </li>
     )
