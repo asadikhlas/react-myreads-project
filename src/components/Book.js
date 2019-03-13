@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 
 class Book extends Component {
+    componentDidMount(){
+        console.log(this)
+    }
   render() {
     return (
         <li>
