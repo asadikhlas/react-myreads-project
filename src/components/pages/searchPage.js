@@ -37,7 +37,9 @@ class SearchPage extends Component {
           }else{
               res.forEach(b => {
                   let f = this.state.books.filter(B => B.id === b.id)
-                  b.shelf = f[0] ? f.shelf : null
+                  if(f[0]){
+                        b.shelf = f[0].shelf
+                  }
                   
               });
               return this.setState({results:res})
@@ -72,7 +74,7 @@ class SearchPage extends Component {
         <div className="search-books-results">
           <ol className="books-grid">
           {
-              this.state.results.map((item,key) => <Book key={key} book={item} />)
+              this.state.results.map((book,key) => <Book updateBook={this.updateBook} book={book} key={key} />)
           }
           </ol>
         </div>
